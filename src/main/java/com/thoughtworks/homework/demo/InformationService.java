@@ -1,6 +1,5 @@
 package com.thoughtworks.homework.demo;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -21,7 +20,9 @@ public class InformationService {
     }
 
     private void addMockData() {
-        users.put(1L, Fixtures.buildUser(1L,"Qinyun", 25L, "https://st3.depositphotos.com/1007566/" +
-                "12989/v/950/depositphotos_129895116-stock-illustration-hacker-character-avatar-icon.jpg", "Gong Xi Fa Cai"));
+        User user = Fixtures.buildUser(1L, "Qinyun", 25L, "https://st3.depositphotos.com/1007566/" +
+                "12989/v/950/depositphotos_129895116-stock-illustration-hacker-character-avatar-icon.jpg", "Gong Xi Fa Cai");
+        user.setEducations(Fixtures.buildEducations(2020L, "ThoughtWorks", "Dev"));
+        users.put(1L, user);
     }
 }
