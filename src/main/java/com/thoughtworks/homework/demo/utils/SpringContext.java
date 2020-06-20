@@ -1,4 +1,4 @@
-package com.thoughtworks.homework.demo;
+package com.thoughtworks.homework.demo.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

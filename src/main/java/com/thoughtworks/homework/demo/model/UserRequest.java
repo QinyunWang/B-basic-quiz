@@ -1,10 +1,11 @@
-package com.thoughtworks.homework.demo;
+package com.thoughtworks.homework.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.thoughtworks.homework.demo.utils.SpringContext;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RequiredArgsConstructor
@@ -28,6 +29,7 @@ public class UserRequest {
                 .age(age)
                 .avatar(avatar)
                 .description(description)
+                .educations(new ArrayList<Education>())
                 .build();
     }
 }

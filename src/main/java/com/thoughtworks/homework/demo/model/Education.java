@@ -1,4 +1,4 @@
-package com.thoughtworks.homework.demo;
+package com.thoughtworks.homework.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

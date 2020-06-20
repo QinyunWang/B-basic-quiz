@@ -1,5 +1,8 @@
 package com.thoughtworks.homework.demo;
 
+import com.thoughtworks.homework.demo.model.Education;
+import com.thoughtworks.homework.demo.model.User;
+import com.thoughtworks.homework.demo.utils.Fixtures;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -28,6 +31,11 @@ public class InformationService {
         Long id = user.getId();
         users.put(id, user);
         return id;
+    }
+
+    public void addEducation(Long id, Education education) {
+        System.out.println(users.get(id));
+        users.get(id).addEducation(education);
     }
 
     private void addMockData() {

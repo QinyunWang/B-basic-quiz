@@ -1,5 +1,8 @@
 package com.thoughtworks.homework.demo;
 
+import com.thoughtworks.homework.demo.model.Education;
+import com.thoughtworks.homework.demo.model.User;
+import com.thoughtworks.homework.demo.model.UserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +36,11 @@ public class InformationController {
     @ResponseStatus(HttpStatus.CREATED)
     public Long addUser(@RequestBody UserRequest userRequest) {
         return informationService.addUser(userRequest.toUser());
+    }
+
+    @PostMapping("users/{id}/educations")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addEducation(@PathVariable("id") Long id, @RequestBody Education education) {
+        informationService.addEducation(id, education);
     }
 }
