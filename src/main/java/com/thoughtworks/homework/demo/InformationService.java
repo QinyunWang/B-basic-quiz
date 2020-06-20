@@ -3,6 +3,7 @@ package com.thoughtworks.homework.demo;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -17,6 +18,10 @@ public class InformationService {
 
     public User getUser(Long id) {
         return users.get(id);
+    }
+
+    public List<Education> getEducations(Long id) {
+        return users.get(id).getEducations();
     }
 
     private void addMockData() {
