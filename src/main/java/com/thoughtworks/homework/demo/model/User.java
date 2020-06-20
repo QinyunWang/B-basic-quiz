@@ -1,13 +1,11 @@
 package com.thoughtworks.homework.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.thoughtworks.homework.demo.model.Education;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Collections;
 import java.util.List;
 
 @Data
