@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import static java.lang.String.format;
+
 @Service
 public class InformationService {
 
@@ -23,11 +25,11 @@ public class InformationService {
 
     public User getUser(Long id) {
         Optional<User> user = Optional.ofNullable(users.get(id));
-        return user.orElseThrow(() -> new UserNotFoundException("There is no such user."));
+        return user.orElseThrow(() -> new UserNotFoundException(format("The user with id %s is not found", id)));
     }
 
     public List<Education> getEducations(Long id) {
-        return users.get(id).getEducations();
+        return this.getUser(id).getEducations();
     }
 
     public Long addUser(User user) {
