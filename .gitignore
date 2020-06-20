@@ -4,6 +4,7 @@ HELP.md
 build/
 
 .idea
+.idea/
 
 *.iws
 *.iml

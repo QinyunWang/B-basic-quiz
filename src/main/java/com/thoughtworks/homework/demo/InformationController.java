@@ -13,7 +13,7 @@ public class InformationController {
     private final InformationService informationService;
 
     @GetMapping("/users/{id}")
-    public String getName(@PathVariable("id") String id) {
-        return informationService.getName(id);
+    public User getName(@PathVariable("id") Long id) {
+        return informationService.getUser(id);
     }
 }

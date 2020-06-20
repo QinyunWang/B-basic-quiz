@@ -3,11 +3,25 @@ package com.thoughtworks.homework.demo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
-@RequiredArgsConstructor
 public class InformationService {
 
-    public String getName(String id) {
-        return "ALOHA";
+    private Map<Long, User> users;
+
+    public InformationService() {
+        users = new HashMap<>();
+        this.addMockData();
+    }
+
+    public User getUser(Long id) {
+        return users.get(id);
+    }
+
+    private void addMockData() {
+        users.put(1L, Fixtures.buildUser(1L,"Qinyun", 25L, "https://st3.depositphotos.com/1007566/" +
+                "12989/v/950/depositphotos_129895116-stock-illustration-hacker-character-avatar-icon.jpg", "Gong Xi Fa Cai"));
     }
 }
