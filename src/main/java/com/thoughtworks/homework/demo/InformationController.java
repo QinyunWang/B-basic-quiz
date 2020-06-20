@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -34,13 +35,13 @@ public class InformationController {
 
     @PostMapping("users")
     @ResponseStatus(HttpStatus.CREATED)
-    public Long addUser(@RequestBody UserRequest userRequest) {
+    public Long addUser(@RequestBody @Valid UserRequest userRequest) {
         return informationService.addUser(userRequest.toUser());
     }
 
     @PostMapping("users/{id}/educations")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addEducation(@PathVariable("id") Long id, @RequestBody Education education) {
+    public void addEducation(@PathVariable("id") Long id, @RequestBody @Valid Education education) {
         informationService.addEducation(id, education);
     }
 }

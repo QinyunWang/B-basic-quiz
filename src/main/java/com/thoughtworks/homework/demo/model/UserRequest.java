@@ -5,14 +5,18 @@ import com.thoughtworks.homework.demo.utils.SpringContext;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RequiredArgsConstructor
 @Data
 public class UserRequest {
+
+    @NotNull(message = "Name cannot be null")
     private String name;
 
+    @NotNull(message = "Age cannot be null")
     private Long age;
 
     private String avatar;
