@@ -24,6 +24,12 @@ public class InformationService {
         return users.get(id).getEducations();
     }
 
+    public Long addUser(User user) {
+        Long id = user.getId();
+        users.put(id, user);
+        return id;
+    }
+
     private void addMockData() {
         User user = Fixtures.buildUser(1L, "Qinyun", 25L, "https://st3.depositphotos.com/1007566/" +
                 "12989/v/950/depositphotos_129895116-stock-illustration-hacker-character-avatar-icon.jpg", "Gong Xi Fa Cai");

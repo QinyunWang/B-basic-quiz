@@ -19,12 +19,7 @@ public class UserRequest {
     private String description;
 
     @JsonIgnore
-    private AtomicLong idGenerator;
-
-    @Autowired
-    public void setIdGenerator(AtomicLong idGenerator) {
-        this.idGenerator = idGenerator;
-    }
+    private AtomicLong idGenerator = SpringContext.getBean(AtomicLong.class);
 
     public User toUser() {
         return User.builder()
